@@ -7,3 +7,5 @@ require("config.keymaps")
 
 -- load plugin manager
 require("config.manager")
+
+
