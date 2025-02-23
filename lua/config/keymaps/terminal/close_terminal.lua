@@ -10,7 +10,6 @@ local function get_terminal_tabs()
     table.insert(terminal_tabs, current_win)
   end
 
-
   for _, win in ipairs(vim.api.nvim_list_wins()) do
     if win ~= current_win then
       local bufnr = vim.api.nvim_win_get_buf(win)
@@ -50,7 +49,10 @@ local function show_terminal_numbers()
       focusable = false,
       border = "none",
     }
+
     local float_win = vim.api.nvim_open_win(buf, false, opts)
+    vim.api.nvim_win_set_option(float_win, "winhighlight", "Normal:TerminalNumberColor")
+
     table.insert(floating_windows, float_win)
   end
 
@@ -61,11 +63,12 @@ local function show_terminal_numbers()
         vim.api.nvim_win_close(float_win, true)
       end
     end
-  end, 3000)
+  end, 1500)
 
   return terminal_tabs
 end
 
+-- key binding
 vim.keymap.set("n", "<C-t>", function()
   local terminal_tabs = show_terminal_numbers()
   vim.cmd("redraw")

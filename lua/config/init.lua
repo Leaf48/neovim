@@ -1,5 +1,6 @@
 -- load options
 require("config.options")
+require("config.colors")
 
 -- load keymaps
 require("config.keymaps")
