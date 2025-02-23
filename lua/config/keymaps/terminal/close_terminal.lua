@@ -36,7 +36,7 @@ local function show_terminal_numbers()
     local row = pos[1]
     local col = pos[2]
 
-    -- 表示用の一時バッファを作成
+    -- create temporary buffer for text
     local buf = vim.api.nvim_create_buf(false, true)
     vim.api.nvim_buf_set_lines(buf, 0, -1, false, { tostring(i) })
     local opts = {
@@ -56,7 +56,7 @@ local function show_terminal_numbers()
     table.insert(floating_windows, float_win)
   end
 
-  -- 1秒後に浮動ウィンドウを全て閉じる
+  -- remove buffer in a few seconds
   vim.defer_fn(function()
     for _, float_win in ipairs(floating_windows) do
       if vim.api.nvim_win_is_valid(float_win) then
@@ -86,3 +86,10 @@ vim.keymap.set("n", "<C-t>", function()
     end
   end
 end, opt)
+
+-- key bindng
+local wk = require('which-key')
+wk.add({
+  {"<C-t>", mode = "n", desc = "Show terminal tabs and choose which one to close"},
+})
+

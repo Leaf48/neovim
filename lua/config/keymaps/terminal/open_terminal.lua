@@ -28,3 +28,10 @@ vim.keymap.set("n", "<Leader>/", open_terminal, { noremap = true, silent = true 
 
 -- back to other tab from terminal
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n><C-w>w', { noremap = true, silent = true })
+
+local wk = require('which-key')
+wk.add({
+  {"<Leader>/", mode = "n", desc = "Open terminal"},
+  {"<Esc>", mode = "t", desc = "Leave terminal"},
+})
+

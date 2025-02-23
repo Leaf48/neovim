@@ -18,10 +18,12 @@ return {
     {
       '<Leader>f',
       function() require("telescope.builtin").find_files() end,
+      desc = "Find files"
     },
     {
       '<Leader>g',
       function() require("telescope.builtin").live_grep() end,
+      desc = "Live grep"
     }
   },
 }
