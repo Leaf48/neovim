@@ -3,7 +3,8 @@ return {
   config = function()
     require('lspsaga').setup({
       ui = {
-        enable = false
+        enable = false,
+        sign = false
       }
     })
 
