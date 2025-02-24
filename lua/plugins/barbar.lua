@@ -8,12 +8,9 @@ return {
   config = function()
     require("barbar").setup()
 
-    vim.keymap.set("n", "<S-j>", ":BufferPrevious<CR>", opt)
-    vim.keymap.set("n", "<S-k>", ":BufferNext<CR>", opt)
+    vim.keymap.set("n", "<S-i>", ":BufferPrevious<CR>", opt)
+    vim.keymap.set("n", "<S-o>", ":BufferNext<CR>", opt)
     vim.keymap.set("n", "<S-q>", ":BufferClose<CR>", opt)
 
-    -- Switch active tab
-    vim.keymap.set("n", "<S-h>", "<C-w>h", opt)
-    vim.keymap.set("n", "<S-l>", "<C-w>l", opt)
   end
 }

@@ -15,7 +15,7 @@ local function open_terminal()
   else
     -- create terminal and resize terminal
     vim.cmd("bel terminal")
-    vim.cmd("resize 5")
+    vim.cmd("resize 10")
   end
 
   -- start insert-mode

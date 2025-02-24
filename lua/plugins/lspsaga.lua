@@ -6,11 +6,6 @@ return {
       enable = false,
       enable_in_insert = false,
     },
-
-      -- ui = {
-      --   enable = false,
-      --   sign = false
-      -- }
     })
 
     -- show hover doc
@@ -27,6 +22,7 @@ return {
       {"hd", mode = "n", desc = "Hover document"},
       {"R", mode = "n", desc = "Rename variable/file"},
       {"gd", mode = "n", desc = "Go to definition"},
+      {"sr", mode = "n", desc = "See references"},
     })
   end,
   dependencies = {

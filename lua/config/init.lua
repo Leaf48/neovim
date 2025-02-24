@@ -7,3 +7,4 @@ require("config.manager")
 
 -- load keymaps
 require("config.keymaps")
+
