@@ -2,10 +2,15 @@ return {
   "nvimdev/lspsaga.nvim",
   config = function()
     require('lspsaga').setup({
-      ui = {
-        enable = false,
-        sign = false
-      }
+    lightbulb = {
+      enable = false,
+      enable_in_insert = false,
+    },
+
+      -- ui = {
+      --   enable = false,
+      --   sign = false
+      -- }
     })
 
     -- show hover doc
@@ -14,6 +19,8 @@ return {
     vim.keymap.set("n", "R", ":Lspsaga rename<CR>", opt)
     -- go to definition
     vim.keymap.set("n", "gd", ":Lspsaga goto_definition<CR>", opt)
+    -- see references
+    vim.keymap.set("n", "sr", ":Lspsaga finder<CR>", opt)
 
     local wk = require('which-key')
     wk.add({
@@ -21,7 +28,6 @@ return {
       {"R", mode = "n", desc = "Rename variable/file"},
       {"gd", mode = "n", desc = "Go to definition"},
     })
-
   end,
   dependencies = {
       'nvim-treesitter/nvim-treesitter', -- optional
