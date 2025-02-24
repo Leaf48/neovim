@@ -6,5 +6,6 @@ opt = {noremap = true, silent = true}
 
 require("config.keymaps.basic")
 require("config.keymaps.terminal")
+require("config.keymaps.tab")
 
 
