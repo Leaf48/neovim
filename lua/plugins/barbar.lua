@@ -8,9 +8,9 @@ return {
   config = function()
     require("barbar").setup()
 
-    vim.keymap.set("n", "<S-i>", ":BufferPrevious<CR>", opt)
-    vim.keymap.set("n", "<S-o>", ":BufferNext<CR>", opt)
-    vim.keymap.set("n", "<S-q>", ":BufferClose<CR>", opt)
+    vim.keymap.set("n", "<C-,>", ":BufferPrevious<CR>", opt)
+    vim.keymap.set("n", "<C-.>", ":BufferNext<CR>", opt)
+    vim.keymap.set("n", "<C-/>", ":BufferClose<CR>", opt)
 
   end
 }
