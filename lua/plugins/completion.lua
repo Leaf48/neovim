@@ -10,6 +10,8 @@ local servers = {
   "rust_analyzer",
   "pyright",
   "pylsp",
+  "tailwindcss",
+  "svelte"
 }
 
 return {
